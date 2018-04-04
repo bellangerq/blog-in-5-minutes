@@ -4,7 +4,7 @@
       <div class="foreground">
         <div class="page-bar wrapper">
           <a href="/" class="person-name">John Doe</a>
-          <Navigation></Navigation>
+          <Header></Header>
         </div>
       </div>
       <div>
@@ -35,7 +35,7 @@
 <script>
 import VueMarkdown from 'vue-markdown'
 import {createClient} from '~/plugins/contentful.js'
-import Navigation from '~/components/navigation.vue'
+import Header from '~/components/header.vue'
 
 const client = createClient()
 
@@ -52,7 +52,7 @@ export default {
     .catch(console.error)
   },
   components: {
-    Navigation,
+    Header,
     VueMarkdown
   }
 }

@@ -1,0 +1,8 @@
+// Add arrow to external links
+body a[target='_blank']::after {
+  color: inherit;
+  content: '\2197';
+  display: inline-block;
+  font-size: .8em;
+  margin-left: 5px;
+}

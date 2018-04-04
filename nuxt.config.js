@@ -18,7 +18,7 @@ const config = {
   ** Headers of the page
   */
   head: {
-    title: 'Custom app with Contentful',
+    title: 'Sentences 💬',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,10 +30,15 @@ const config = {
     ]
   },
 
+  css: [
+    '@/assets/stylesheets/vars.scss',
+    '@/assets/stylesheets/helpers.scss'
+  ],
+
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#2199e8' },
+  loading: { color: '#fff' },
 
   /*
   ** Build configuration

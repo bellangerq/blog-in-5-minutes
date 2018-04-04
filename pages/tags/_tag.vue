@@ -4,7 +4,7 @@
       <div class="foreground">
         <div class="page-bar wrapper">
           <a href="/" class="person-name">John Doe</a>
-          <Navigation></Navigation>
+          <Header></Header>
         </div>
         <div class="page-info wrapper">
           <h2>#{{ tag }}</h2>
@@ -27,7 +27,7 @@
 
 <script>
 import {createClient} from '~/plugins/contentful.js'
-import Navigation from '~/components/navigation.vue'
+import Header from '~/components/header.vue'
 import ArticlePreview from '~/components/article-preview.vue'
 
 const client = createClient()
@@ -47,7 +47,7 @@ export default {
   },
   components: {
     ArticlePreview,
-    Navigation
+    Header
   }
 }
 </script>

@@ -1,21 +1,10 @@
 <template>
   <div class="container">
-    <Greeting></Greeting>
     <main role="main">
       <nuxt/>
     </main>
   </div>
 </template>
-
-<script>
-  import Greeting from '~/components/greeting.vue'
-
-  export default {
-    components: {
-      Greeting
-    }
-  }
-</script>
 
 <style>
   @font-face {
@@ -27,13 +16,16 @@
   }
 
   body {
-    background: #E1E7EA;
-    max-width: 1180px;
+    background: #3D4452;
+    max-width: 900px;
     margin: 0 auto;
     font-family: "Avenir", Tahoma, Arial, Helvetica, sans-serif;
     font-size: 16px;
     line-height: 1.65;
-    color: #373F49;
+  }
+
+  body *:focus {
+    outline: none;
   }
 
   .wrapper {
