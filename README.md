@@ -8,5 +8,5 @@ The website is built with [Nuxt.js](https://nuxtjs.org) and the content is pulle
 
 ## Todo
 
-- [ ] Clean useless code from cloning
+- [x] Clean useless code from cloning
 - [ ] Shape data and content structure
