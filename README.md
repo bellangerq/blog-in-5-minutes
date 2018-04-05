@@ -12,7 +12,7 @@ The website is built with [Nuxt.js](https://nuxtjs.org) and the content is pulle
 - [x] Shape data and content structure
 - [x] Display posts on homepage
 - [x] Redefine routes
-- [ ] Reset styles
+- [x] Reset styles
 - [ ] Set `/` page content
 - [ ] Style `/` page
 - [ ] Set `/_slug` content

@@ -2,9 +2,6 @@
   <div>
     <Header></Header>
     <section>
-      <div>
-        <h2>All articles ({{ posts.length }})</h2>
-      </div>
       <ul>
         <li v-for="post in posts">
           <article-preview :post="post"></article-preview>

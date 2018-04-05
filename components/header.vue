@@ -37,7 +37,6 @@ if (process.browser) {
 
 <style lang="scss">
 @import '../assets/stylesheets/vars.scss';
-@import '../assets/stylesheets/helpers.scss';
 
 header {
   align-items: center;
@@ -47,7 +46,7 @@ header {
   padding: 20px;
 
   a {
-    color: darken($white, 15%);
+    color: $gray;
     font-size: 20px;
     text-decoration: none;
     transition: all 0.3s;
@@ -65,7 +64,7 @@ header {
     button {
       background: none;
       border: none;
-      color: darken($white, 15%);
+      color: $gray;
       padding: 0;
 
       &:hover {
@@ -93,7 +92,7 @@ header {
 
       a {
         border-radius: 4px;
-        color: inherit;
+        color: $black;
         display: block;
         font-size: 14px;
         padding: 5px 10px;
@@ -101,7 +100,7 @@ header {
         transition: all 0.3s;
 
         &:hover, &:focus {
-          background: darken($white, 15%);
+          background: $gray;
         }
       }
     }
