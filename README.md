@@ -9,4 +9,12 @@ The website is built with [Nuxt.js](https://nuxtjs.org) and the content is pulle
 ## Todo
 
 - [x] Clean useless code from cloning
-- [ ] Shape data and content structure
+- [x] Shape data and content structure
+- [x] Display posts on homepage
+- [x] Redefine routes
+- [ ] Reset styles
+- [ ] Set `/` page content
+- [ ] Style `/` page
+- [ ] Set `/_slug` content
+- [ ] Style `/_slug` page
+- [ ] Create `/about` page
