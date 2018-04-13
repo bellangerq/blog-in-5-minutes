@@ -2,11 +2,14 @@
   <div>
     <Header></Header>
     <section>
-      <ul>
-        <li v-for="post in posts">
+      <div class="cards">
+        <div class="card" v-for="post in posts">
           <article-preview :post="post"></article-preview>
-        </li>
-      </ul>
+        </div>
+        <div class="card">
+          <twitter-card></twitter-card>
+        </div>
+      </div>
     </section>
   </div>
 </template>
@@ -15,6 +18,7 @@
 import { createClient } from '~/plugins/contentful.js'
 import Header from '~/components/header.vue'
 import ArticlePreview from '~/components/article-preview.vue'
+import TwitterCard from '~/components/twitter-card.vue'
 
 const client = createClient()
 
@@ -33,10 +37,32 @@ export default {
   },
   components: {
     Header,
-    ArticlePreview
+    ArticlePreview,
+    TwitterCard
   }
 }
 </script>
 
 <style lang="scss">
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card {
+    display: block;
+    margin: 0 20px 20px;
+
+    @media(min-width: 500px) {
+      display: flex;
+      margin: 0 20px 40px 20px;
+      width: calc((100% / 2) - 40px);
+    }
+
+    @media(min-width: 768px) {
+      display: flex;
+      margin: 0 20px 40px 20px;
+      width: calc((100% / 3) - 40px);
+    }
+  }
+}
 </style>

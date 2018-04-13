@@ -5,3 +5,8 @@ body a[target='_blank']::after {
   font-size: .8em;
   margin-left: 5px;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

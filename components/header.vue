@@ -1,6 +1,6 @@
 <template>
   <header>
-    <a href="/" title="Sentences 💬">Sentences 💬</a>
+    <a href="/" title="Sentences 💬">Sentences <span>💬</span></a>
     <div class="navigation-container">
       <button type="button" id="toggleNav" data-nav="closed">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
@@ -46,13 +46,17 @@ header {
   padding: 20px;
 
   a {
-    color: $gray;
+    color: $color-main;
     font-size: 20px;
     text-decoration: none;
-    transition: all 0.3s;
 
-    &:hover, &:focus {
-      color: $white;
+    span {
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    &:hover span, &:focus span {
+      opacity: 1;
     }
   }
 
@@ -60,19 +64,16 @@ header {
     align-items: center;
     display: flex;
     position: relative;
+    z-index: 1;
 
     button {
       background: none;
       border: none;
-      color: $gray;
+      color: $color-main;
       padding: 0;
 
       &:hover {
         cursor: pointer;
-      }
-
-      &:hover svg, &:focus svg, &[data-nav='open'] svg {
-        stroke: $white;
       }
 
       svg {
@@ -81,8 +82,9 @@ header {
     }
 
     nav {
-      background: $white;
+      background: $color-white;
       border-radius: 4px;
+      box-shadow: 0px 2px 2px 0px rgba($color-black, 0.14);
       display: none;
       padding: 10px;
       position: absolute;
@@ -92,15 +94,15 @@ header {
 
       a {
         border-radius: 4px;
-        color: $black;
+        color: $color-black;
         display: block;
         font-size: 14px;
         padding: 5px 10px;
         text-decoration: none;
-        transition: all 0.3s;
+        transition: background 0.3s ease;
 
         &:hover, &:focus {
-          background: $gray;
+          background: $color-gray;
         }
       }
     }

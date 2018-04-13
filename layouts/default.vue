@@ -11,8 +11,8 @@
 @import '../assets/stylesheets/helpers.scss';
 
   body {
-    background: #3D4452;
-    color: $gray;
+    background: $color-gray;
+    color: $color-main;
     max-width: 900px;
     margin: 0 auto;
     font-family: -apple-system,
@@ -29,7 +29,7 @@
     line-height: 1.65;
 
     *:focus {
-      outline: none;
+      outline: 3px solid $color-main;
     }
 
     img {
