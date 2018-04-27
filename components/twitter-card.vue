@@ -1,22 +1,51 @@
 <template>
   <div class="twitter-card">
-    <h2>Enjoying these stories?</h2>
-    <!-- create button component -->
-    <a href="#">Follow on twitter</a>
+    <p>Enjoying these stories? Get to know when new stories are released by following the Twitter account.</p>
+    <Button
+      href="https://twitter.com/bellanger_q"
+      title="Follow on Twitter"
+      text="Follow on Twitter"
+      target="_blank"
+    ></Button>
   </div>
 </template>
+
+<script type="text/javascript">
+  import Button from '~/components/button.vue'
+
+  export default {
+    components: {
+      Button
+    }
+  }
+</script>
 
 <style lang="scss">
 @import '../assets/stylesheets/vars.scss';
 .twitter-card {
+  align-items: center;
   background: $color-white;
   border-radius: $radius;
-  transition: box-shadow .3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
   width: 100%;
 
-  h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+  img {
+    border-radius: $radius $radius 0 0;
   }
+
+  a {
+    background: $color-main;
+    border-radius: $radius;
+    color: $color-white;
+    display: block;
+    margin: 20px auto 0;
+    padding: 5px 10px;
+    text-align: center;
+    width: 100%;
+  }
+
 }
 </style>

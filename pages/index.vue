@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header></Header>
+    <Header :title="title" :links="links"></Header>
     <section>
       <div class="cards">
         <div class="card" v-for="post in posts">
@@ -24,16 +24,25 @@ const client = createClient()
 
 export default {
   asyncData ({env, params}) {
-    return client.getEntries({
-      'content_type': env.CTF_BLOG_POST_TYPE_ID,
-      order: '-sys.createdAt'
-    })
-    .then(posts => {
+    return Promise.all([
+      client.getEntries({
+        'content_type': env.CTF_TITLE_ID
+      }),
+      client.getEntries({
+        'content_type': env.CTF_NAVIGATION_ID,
+        order: '-sys.createdAt'
+      }),
+      client.getEntries({
+        'content_type': env.CTF_BLOG_POST_TYPE_ID,
+        order: '-sys.createdAt'
+      })
+    ]).then(([title, links, posts]) => {
       return {
+        title: title.items[0],
+        links: links.items,
         posts: posts.items
       }
-    })
-    .catch(console.error)
+    }).catch(console.error)
   },
   components: {
     Header,
@@ -51,6 +60,7 @@ export default {
   .card {
     display: block;
     margin: 0 20px 20px;
+    min-height: 350px;
 
     @media(min-width: 500px) {
       display: flex;

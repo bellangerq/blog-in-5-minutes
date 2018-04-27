@@ -1,11 +1,13 @@
-const {getConfigForKeys} = require('./lib/config.js')
+const { getConfigForKeys } = require('./lib/config.js')
 const ctfConfig = getConfigForKeys([
   'CTF_BLOG_POST_TYPE_ID',
+  'CTF_TITLE_ID',
+  'CTF_NAVIGATION_ID',
   'CTF_SPACE_ID',
   'CTF_CDA_ACCESS_TOKEN',
   'CTF_CMA_ACCESS_TOKEN'
 ])
-const {createClient} = require('./plugins/contentful')
+const { createClient } = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
 const cmaContentful = require('contentful-management')
 const cmaClient = cmaContentful.createClient({
@@ -43,20 +45,6 @@ const config = {
   ** Build configuration
   */
   build: {
-    /*
-    ** Run ESLINT on save
-    */
-    extend (config, ctx) {
-      if (ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    },
-
     postcss: [
       require('autoprefixer')({
         browsers: ['> 5%']
@@ -79,7 +67,6 @@ const config = {
   **
   ** Included:
   ** - blog posts
-  ** - available blog post tags
   */
   generate: {
     routes () {
@@ -95,9 +82,7 @@ const config = {
       .then(([entries, postType]) => {
         return [
           // map entries to URLs
-          ...entries.items.map(entry => `/blog/${entry.fields.slug}`),
-          // map all possible tags to URLs
-          ...postType.fields.find(field => field.id === 'tags').items.validations[0].in.map(tag => `/tags/${tag}`)
+          ...entries.items.map(entry => `/${entry.fields.slug}`)
         ]
       })
     }
@@ -110,7 +95,9 @@ const config = {
   env: {
     CTF_SPACE_ID: ctfConfig.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: ctfConfig.CTF_CDA_ACCESS_TOKEN,
-    CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID
+    CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID,
+    CTF_TITLE_ID: ctfConfig.CTF_TITLE_ID,
+    CTF_NAVIGATION_ID: ctfConfig.CTF_NAVIGATION_ID
   }
 }
 

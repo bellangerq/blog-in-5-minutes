@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header></Header>
+    <Header :title="title" :links="links"></Header>
     <section>
       <main>
         <img
@@ -31,15 +31,25 @@ const client = createClient()
 
 export default {
   asyncData ({ env, params }) {
-    return client.getEntries({
-      'content_type': env.CTF_BLOG_POST_TYPE_ID,
-      'fields.slug': params.slug
-    }).then(entries => {
+    return Promise.all([
+      client.getEntries({
+        'content_type': env.CTF_TITLE_ID
+      }),
+      client.getEntries({
+        'content_type': env.CTF_NAVIGATION_ID,
+        order: '-sys.createdAt'
+      }),
+      client.getEntries({
+        'content_type': env.CTF_BLOG_POST_TYPE_ID,
+        'fields.slug': params.slug
+      })
+    ]).then(([title, links, post]) => {
       return {
-        post: entries.items[0]
+        title: title.items[0],
+        links: links.items,
+        post: post.items[0]
       }
-    })
-    .catch(console.error)
+    }).catch(console.error)
   },
   components: {
     Header,

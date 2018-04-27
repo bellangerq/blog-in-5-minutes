@@ -1,15 +1,19 @@
 <template>
   <header>
-    <a href="/" title="Sentences 💬">Sentences <span>💬</span></a>
+    <a href="/" :title="title.fields.title">{{ title.fields.text }} <span>{{ title.fields.emoji }}</span></a>
     <div class="navigation-container">
       <button type="button" id="toggleNav" data-nav="closed">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
       </button>
       <nav>
-        <a href="/" title="Sentences 💬">Home</a>
-        <a href="/about" title="About this project">About</a>
-        <a href="https://twitter.com/bellanger_q" title="Get news on Twitter" target="_blank">Twitter</a>
-        <a href="https://github.com/bellangerq" title="See source code on GitHub" target="_blank">GitHub</a>
+        <a
+          v-for="link in links"
+          :href="link.fields.url || '/'"
+          :title="link.fields.title"
+          :target="link.fields.target ? '_blank': ''"
+        >
+          {{ link.fields.text }}
+        </a>
       </nav>
     </div>
   </header>
@@ -32,6 +36,19 @@ if (process.browser) {
       nav.style.display = 'none'
     }
   })
+
+  // Hide nav on blur
+  navButton.addEventListener('blur', (event) => {
+    navButton.setAttribute('data-nav', 'closed')
+    nav.style.display = 'none'
+  })
+}
+
+export default {
+  props: [
+    'title',
+    'links'
+  ]
 }
 </script>
 
@@ -102,7 +119,7 @@ header {
         transition: background 0.3s ease;
 
         &:hover, &:focus {
-          background: $color-gray;
+          background: $color-white-darker;
         }
       }
     }

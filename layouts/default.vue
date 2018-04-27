@@ -11,7 +11,7 @@
 @import '../assets/stylesheets/helpers.scss';
 
   body {
-    background: $color-gray;
+    background: $color-white-darker;
     color: $color-main;
     max-width: 900px;
     margin: 0 auto;
