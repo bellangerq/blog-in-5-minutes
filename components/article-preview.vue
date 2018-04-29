@@ -1,17 +1,15 @@
 <template>
   <nuxt-link class="article-link" :to="{ name: 'slug', params: { slug: post.fields.slug }}">
-    <article>
-      <img
-        :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=350&h=196'"
-        :srcset="`${post.fields.heroImage.fields.file.url}?w=350&h=196&fit=fill 350w, ${post.fields.heroImage.fields.file.url}?w=1000&h=562&fit=fill 1000w, ${post.fields.heroImage.fields.file.url}?w=2000&h=1125&fit=fill 2000w`"
-        sizes="(min-width: 1024px) 400px, 100vw"
-        :alt="post.fields.title"
-      >
-      <div class="content">
-        <h2>{{ post.fields.title }}</h2>
-        <p>{{ post.fields.description }}</p>
-      </div>
-    </article>
+    <img
+      :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=350&h=196'"
+      :srcset="`${post.fields.heroImage.fields.file.url}?w=350&h=196&fit=fill 350w, ${post.fields.heroImage.fields.file.url}?w=1000&h=562&fit=fill 1000w, ${post.fields.heroImage.fields.file.url}?w=2000&h=1125&fit=fill 2000w`"
+      sizes="(min-width: 1024px) 400px, 100vw"
+      :alt="post.fields.title"
+    >
+    <div class="content">
+      <h2>{{ post.fields.title }}</h2>
+      <p>{{ post.fields.description }}</p>
+    </div>
   </nuxt-link>
 </template>
 
@@ -23,33 +21,32 @@ export default {
 
 <style lang="scss">
 @import '../assets/stylesheets/vars.scss';
+
 .article-link {
   transition: box-shadow .3s ease;
+  background: $color-white;
+  border-radius: $radius;
+  height: 100%;
 
-  article {
+  img {
+    border-radius: $radius $radius 0 0;
+    filter: grayscale(100%);
+    transition: all .5s ease;
+  }
+
+  .content {
     background: $color-white;
-    border-radius: $radius;
-    height: 100%;
+    border-radius: 0 0 $radius $radius;
+    padding: 20px;
 
-    img {
-      border-radius: $radius $radius 0 0;
-      filter: grayscale(100%);
-      transition: all .5s ease;
+    h2 {
+      font-size: 1.25em;
+      font-weight: normal;
+      margin: 0 0 10px 0;
     }
 
-    .content {
-      background: $color-white;
-      border-radius: 0 0 $radius $radius;
-      padding: 20px;
-
-      h2 {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      p {
-        font-size: 14px;
-      }
+    p {
+      font-size: 0.875em;
     }
   }
 

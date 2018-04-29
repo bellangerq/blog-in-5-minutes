@@ -32,8 +32,9 @@ const config = {
   },
 
   css: [
-    '@/assets/stylesheets/vars.scss',
-    '@/assets/stylesheets/helpers.scss'
+    { src: '@/assets/stylesheets/vars.scss' },
+    { src: '@/assets/stylesheets/typo.scss' },
+    { src: '@/assets/stylesheets/helpers.scss' }
   ],
 
   /*
