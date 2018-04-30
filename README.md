@@ -1,6 +1,6 @@
 # Sentences 💬
 
-This is a simple web application to display short stories.
+This is a simple web application I made to display short stories.
 
 ## To do
 - [ ] Improve `_slug` page design
@@ -10,7 +10,9 @@ This is a simple web application to display short stories.
 
 ## Tools
 
-The website is built with [Nuxt.js](https://nuxtjs.org) and the content is pulled from [Contentful](https://contentful.com). It is deployed online as a static website thanks to [Surge.sh](https://surge.sh).
+It's built with [Nuxt.js](https://nuxtjs.org) and the content is pulled from [Contentful](https://contentful.com). It is deployed online as a static website thanks to [Surge.sh](https://surge.sh).
+
+The idea of this is to create a website with a fully customizable content without using a traditional CMS. And also to force me to write sometimes...
 
 ## Development
 
@@ -24,7 +26,7 @@ Generate static files:
 npm run generate
 ```
 
-Deploy on [Surge.sh](https://surge.sh):
+Deploy on Surge:
 ```shell
 npm run deploy
 ```
