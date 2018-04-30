@@ -6,9 +6,6 @@
         <div class="card" v-for="post in posts">
           <article-preview :post="post"></article-preview>
         </div>
-        <div class="card">
-          <twitter-card></twitter-card>
-        </div>
       </div>
     </section>
   </div>
@@ -18,7 +15,6 @@
 import { createClient } from '~/plugins/contentful.js'
 import Header from '~/components/header.vue'
 import ArticlePreview from '~/components/article-preview.vue'
-import TwitterCard from '~/components/twitter-card.vue'
 
 const client = createClient()
 
@@ -30,7 +26,7 @@ export default {
       }),
       client.getEntries({
         'content_type': env.CTF_NAVIGATION_ID,
-        order: '-sys.createdAt'
+        order: 'fields.order'
       }),
       client.getEntries({
         'content_type': env.CTF_BLOG_POST_TYPE_ID,
@@ -46,8 +42,7 @@ export default {
   },
   components: {
     Header,
-    ArticlePreview,
-    TwitterCard
+    ArticlePreview
   }
 }
 </script>
@@ -66,12 +61,6 @@ export default {
       display: flex;
       margin: 0 20px 40px 20px;
       width: calc((100% / 2) - 40px);
-    }
-
-    @media(min-width: 768px) {
-      display: flex;
-      margin: 0 20px 40px 20px;
-      width: calc((100% / 3) - 40px);
     }
   }
 }

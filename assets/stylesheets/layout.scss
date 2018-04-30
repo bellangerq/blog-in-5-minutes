@@ -1,0 +1,14 @@
+@import 'vars';
+
+body {
+  background: $color-white-darker;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+article {
+  background: $color-white;
+  border-radius: $radius;
+  box-shadow: 0 2px 2px 0 rgba($color-black, 0.14);
+  margin: 0 20px 20px;
+}

@@ -26,12 +26,13 @@ export default {
   transition: box-shadow .3s ease;
   background: $color-white;
   border-radius: $radius;
+  box-shadow: 0 2px 2px 0 rgba($color-black, 0.14);
   height: 100%;
 
   img {
     border-radius: $radius $radius 0 0;
     filter: grayscale(100%);
-    transition: all .5s ease;
+    transition: filter .5s ease;
   }
 
   .content {
@@ -50,12 +51,9 @@ export default {
     }
   }
 
-  &:hover, &:focus {
-    box-shadow: 0px 2px 2px 0px rgba($color-black, 0.14);
-
-    article img {
-      filter: grayscale(0%);
-    }
+  &:hover img,
+  &:focus img {
+    filter: grayscale(0%);
   }
 }
 </style>

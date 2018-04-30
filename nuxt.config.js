@@ -34,7 +34,8 @@ const config = {
   css: [
     { src: '@/assets/stylesheets/vars.scss' },
     { src: '@/assets/stylesheets/typo.scss' },
-    { src: '@/assets/stylesheets/helpers.scss' }
+    { src: '@/assets/stylesheets/helpers.scss' },
+    { src: '@/assets/stylesheets/layout.scss' }
   ],
 
   /*
@@ -78,9 +79,10 @@ const config = {
         }),
         // get the blog post content type
         cmaClient.getSpace(ctfConfig.CTF_SPACE_ID)
-          .then(space => space.getContentType(ctfConfig.CTF_BLOG_POST_TYPE_ID))
-      ])
-      .then(([entries, postType]) => {
+          .then(space => {
+            space.getContentType(ctfConfig.CTF_BLOG_POST_TYPE_ID)
+          })
+      ]).then(([entries, postType]) => {
         return [
           // map entries to URLs
           ...entries.items.map(entry => `/${entry.fields.slug}`)

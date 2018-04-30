@@ -11,3 +11,14 @@ hr {
     text-align: center;
   }
 }
+
+// Focus style
+*:focus {
+  outline: 3px solid $color-main;
+}
+
+// Reset images
+img {
+  display: block;
+  width: 100%;
+}

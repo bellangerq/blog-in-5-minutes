@@ -2,15 +2,16 @@
   <header>
     <a href="/" :title="title.fields.title">{{ title.fields.text }} <span>{{ title.fields.emoji }}</span></a>
     <div class="navigation-container">
-      <button type="button" id="toggleNav" data-nav="closed">
+      <button type="button" id="toggleNav" @click="toggleNav">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
       </button>
-      <nav>
+      <nav class="closed">
         <a
           v-for="link in links"
-          :href="link.fields.url || '/'"
+          :href="link.fields.url"
           :title="link.fields.title"
-          :target="link.fields.target ? '_blank': ''"
+          :target="link.fields.target ? '_blank' : ''"
+          :key="link.fields.url"
         >
           {{ link.fields.text }}
         </a>
@@ -20,35 +21,18 @@
 </template>
 
 <script>
-if (process.browser) {
-  // Toggle nav
-  const navButton = document.querySelector('#toggleNav')
-  const nav = document.querySelector('nav')
-  navButton.addEventListener('click', () => {
-    navButton.setAttribute('data-nav', navButton.getAttribute('data-nav') === 'closed' ? 'open' : 'closed')
-    nav.style.display = (nav.style.display === 'block') ? 'none' : 'block'
-  })
-
-  // Hide nav on ESC key
-  document.addEventListener('keyup', (event) => {
-    if (event.keyCode === 27 && nav.style.display === 'block') {
-      navButton.setAttribute('data-nav', 'closed')
-      nav.style.display = 'none'
-    }
-  })
-
-  // Hide nav on blur
-  navButton.addEventListener('blur', (event) => {
-    navButton.setAttribute('data-nav', 'closed')
-    nav.style.display = 'none'
-  })
-}
 
 export default {
   props: [
     'title',
     'links'
-  ]
+  ],
+  methods: {
+    toggleNav () {
+      const nav = document.querySelector('nav')
+      nav.classList.toggle('closed')
+    }
+  }
 }
 </script>
 
@@ -102,7 +86,6 @@ header {
       background: $color-white;
       border-radius: 4px;
       box-shadow: 0px 2px 2px 0px rgba($color-black, 0.14);
-      display: none;
       padding: 10px;
       position: absolute;
       right: 0;
@@ -121,6 +104,10 @@ header {
         &:hover, &:focus {
           background: $color-white-darker;
         }
+      }
+
+      &.closed {
+        display: none;
       }
     }
   }
