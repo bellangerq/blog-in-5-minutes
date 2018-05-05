@@ -10,6 +10,7 @@
     <div class="content">
       <h1>{{ post.fields.title }}</h1>
       <time>{{ ( new Date(post.fields.publishDate)).toDateString() }}</time>
+      <hr>
       <vue-markdown>{{ post.fields.body }}</vue-markdown>
     </div>
   </article>

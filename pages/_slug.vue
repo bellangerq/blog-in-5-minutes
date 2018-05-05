@@ -1,15 +1,12 @@
 <template>
   <div>
-    <Header :title="title" :links="links"></Header>
     <section>
       <Article :post="post"></Article>
     </section>
-
   </div>
 </template>
 
 <script>
-import Header from '~/components/header.vue'
 import Article from '~/components/article.vue'
 import { createClient } from '~/plugins/contentful.js'
 
@@ -17,28 +14,16 @@ const client = createClient()
 
 export default {
   asyncData ({ env, params }) {
-    return Promise.all([
-      client.getEntries({
-        'content_type': env.CTF_TITLE_ID
-      }),
-      client.getEntries({
-        'content_type': env.CTF_NAVIGATION_ID,
-        order: 'fields.order'
-      }),
-      client.getEntries({
-        'content_type': env.CTF_BLOG_POST_TYPE_ID,
-        'fields.slug': params.slug
-      })
-    ]).then(([title, links, post]) => {
+    return client.getEntries({
+      'content_type': env.CTF_BLOG_POST_TYPE_ID,
+      'fields.slug': params.slug
+    }).then(post => {
       return {
-        title: title.items[0],
-        links: links.items,
         post: post.items[0]
       }
     }).catch(console.error)
   },
   components: {
-    Header,
     Article
   }
 }

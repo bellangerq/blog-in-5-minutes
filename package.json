@@ -1,8 +1,8 @@
 {
   "name": "Sentences",
   "version": "1.1.1",
-  "description": "A static blog based on Contentful",
-  "author": "stefan judis <stefanjudis@gmail.com>",
+  "description": "",
+  "author": "Quentin Bellanger <hello@quentin-bellanger.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",

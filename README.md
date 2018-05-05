@@ -1,12 +1,12 @@
 # Sentences 💬
 
-This is a simple web application I made to display short stories.
+This is a simple web application I made to showcase short stories.
 
 ## To do
-- [ ] Improve `_slug` page design
+- [x] Import content in store, not directly in pages
+- [ ] Close menu on page load (middleware)
 - [ ] Write and design `/about` page
-- [ ] Import content in store, not directly in pages
-- [x] Manage nav links order
+- [ ] Create share buttons component
 
 ## Tools
 
@@ -58,7 +58,7 @@ Once its created on the Contentful dashboard:
   }
 ```
 
-- Pull the content in the choosen page:
+- Pull the content in the chosen page / component:
 ```js
   asyncData ({env, params}) {
     return client.getEntries({

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header :title="title" :links="links"></Header>
     <section>
       <div class="cards">
         <div class="card" v-for="post in posts">
@@ -13,35 +12,22 @@
 
 <script>
 import { createClient } from '~/plugins/contentful.js'
-import Header from '~/components/header.vue'
 import ArticlePreview from '~/components/article-preview.vue'
 
 const client = createClient()
 
 export default {
   asyncData ({env, params}) {
-    return Promise.all([
-      client.getEntries({
-        'content_type': env.CTF_TITLE_ID
-      }),
-      client.getEntries({
-        'content_type': env.CTF_NAVIGATION_ID,
-        order: 'fields.order'
-      }),
-      client.getEntries({
-        'content_type': env.CTF_BLOG_POST_TYPE_ID,
-        order: '-sys.createdAt'
-      })
-    ]).then(([title, links, posts]) => {
+    return client.getEntries({
+      'content_type': env.CTF_BLOG_POST_TYPE_ID,
+      order: '-sys.createdAt'
+    }).then(posts => {
       return {
-        title: title.items[0],
-        links: links.items,
         posts: posts.items
       }
     }).catch(console.error)
   },
   components: {
-    Header,
     ArticlePreview
   }
 }
