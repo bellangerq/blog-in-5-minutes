@@ -7,7 +7,7 @@ This is a simple web application I made to showcase short stories.
 - [x] Close menu on page load (middleware)
 - [x] Create and design `/about` page
 - [x] Add page transitions
-- [ ] Create share buttons component
+- [x] Create share buttons component
 - [x] Show error on undefined post's slug
 - [ ] Customize error page
 - [ ] Define meta tags
@@ -50,14 +50,14 @@ Once its created on the Contentful dashboard:
 ```
 
 - Add it in `ctfConfig`:
-```shell
+```js
   const ctfConfig = getConfigForKeys([
     'CTF_NEW_CONTENT_ID'
   ])
 ```
 
 - Add it in `env`:
-```shell
+```js
   env: {
     CTF_NEW_CONTENT_ID: ctfConfig.CTF_NEW_CONTENT_ID
   }

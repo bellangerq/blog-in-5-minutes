@@ -6,6 +6,7 @@ const client = createClient()
 const createStore = () => {
   return new Vuex.Store({
     state: {
+      domain: 'https://sentences.surge.sh',
       header: {},
       routes: []
     },

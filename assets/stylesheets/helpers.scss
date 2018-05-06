@@ -22,3 +22,9 @@ img {
   display: block;
   width: 100%;
 }
+
+// Selected text
+::selection {
+  background: $color-main;
+  color: $color-white;
+}

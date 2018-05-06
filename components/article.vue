@@ -12,17 +12,21 @@
       <time v-if="post.fields.publishDate">{{ ( new Date(post.fields.publishDate)).toDateString() }}</time>
       <hr>
       <vue-markdown>{{ post.fields.body }}</vue-markdown>
+      <hr>
+      <ShareButtons :url="post.fields.slug" v-if="post.fields.publishDate"></ShareButtons>
     </div>
   </article>
 </template>
 
 <script>
 import VueMarkdown from 'vue-markdown'
+import ShareButtons from '~/components/share-buttons.vue'
 
 export default {
   props: ['post'],
   components: {
-    VueMarkdown
+    VueMarkdown,
+    ShareButtons
   }
 }
 </script>
