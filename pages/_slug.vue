@@ -23,6 +23,9 @@ export default {
       }
     }).catch(console.error)
   },
+  validate ({ params, store }) {
+    return store.state.routes.some(route => route === params.slug)
+  },
   components: {
     Article
   }

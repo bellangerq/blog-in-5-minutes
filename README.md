@@ -8,6 +8,7 @@ This is a simple web application I made to showcase short stories.
 - [x] Create and design `/about` page
 - [x] Add page transitions
 - [ ] Create share buttons component
+- [x] Show error on undefined post's slug
 - [ ] Customize error page
 - [ ] Define meta tags
 - [ ] Make it PWA'ish

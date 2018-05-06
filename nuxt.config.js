@@ -10,10 +10,6 @@ const ctfConfig = getConfigForKeys([
 ])
 const { createClient } = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
-const cmaContentful = require('contentful-management')
-const cmaClient = cmaContentful.createClient({
-  accessToken: ctfConfig.CTF_CMA_ACCESS_TOKEN
-})
 
 const config = {
   head: {
@@ -55,29 +51,12 @@ const config = {
     middleware: ['routeGuard']
   },
 
-  /*
-  ** ᕕ( ᐛ )ᕗ CTF-BLOG-IN-5-MINUTES
-  ** Get all blog posts from Contentful
-  ** and generate the needed files upfront
-  **
-  ** Included:
-  ** - blog posts
-  */
   generate: {
     routes () {
-      return Promise.all([
-        // get all blog posts
-        cdaClient.getEntries({
-          'content_type': ctfConfig.CTF_BLOG_POST_TYPE_ID
-        }),
-        // get the blog post content type
-        cmaClient.getSpace(ctfConfig.CTF_SPACE_ID)
-          .then(space => {
-            space.getContentType(ctfConfig.CTF_BLOG_POST_TYPE_ID)
-          })
-      ]).then(([entries, postType]) => {
+      return cdaClient.getEntries({
+        'content_type': ctfConfig.CTF_BLOG_POST_TYPE_ID
+      }).then(entries => {
         return [
-          // map entries to URLs
           ...entries.items.map(entry => `/${entry.fields.slug}`)
         ]
       })
