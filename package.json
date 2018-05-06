@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "deploy": "nuxt generate && surge dist/ --domain sentences.surge.sh",
+    "deploy": "surge dist/ --domain sentences.surge.sh",
     "import-data": "node ./bin/download-content-model.js && contentful-import --content-file ./data/blog/contentful-export.json"
   },
   "dependencies": {

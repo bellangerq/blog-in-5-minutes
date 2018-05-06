@@ -15,9 +15,6 @@ const cmaClient = cmaContentful.createClient({
 })
 
 const config = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'Sentences 💬',
     meta: [
@@ -38,14 +35,8 @@ const config = {
     { src: '@/assets/stylesheets/layout.scss' }
   ],
 
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
+  loading: { color: '#3d4452' },
 
-  /*
-  ** Build configuration
-  */
   build: {
     postcss: [
       require('autoprefixer')({
@@ -54,13 +45,13 @@ const config = {
     ]
   },
 
-  /*
-  ** ᕕ( ᐛ )ᕗ CTF-BLOG-IN-5-MINUTES
-  ** Make client available everywhere via Nuxt plugins
-  */
   plugins: [
     '~/plugins/contentful'
   ],
+
+  router: {
+    middleware: ['routeGuard']
+  },
 
   /*
   ** ᕕ( ᐛ )ᕗ CTF-BLOG-IN-5-MINUTES
@@ -91,10 +82,6 @@ const config = {
     }
   },
 
-  /*
-  ** Define environment variables being available
-  ** in generate and browser context
-  */
   env: {
     CTF_SPACE_ID: ctfConfig.CTF_SPACE_ID,
     CTF_CDA_ACCESS_TOKEN: ctfConfig.CTF_CDA_ACCESS_TOKEN,
