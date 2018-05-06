@@ -9,7 +9,7 @@
     >
     <div class="content">
       <h1>{{ post.fields.title }}</h1>
-      <time>{{ ( new Date(post.fields.publishDate)).toDateString() }}</time>
+      <time v-if="post.fields.publishDate">{{ ( new Date(post.fields.publishDate)).toDateString() }}</time>
       <hr>
       <vue-markdown>{{ post.fields.body }}</vue-markdown>
     </div>
