@@ -9,7 +9,7 @@ This is a simple web application I made to showcase short stories.
 - [x] Add page transitions
 - [x] Create share buttons component
 - [x] Show error on undefined post's slug
-- [ ] Customize error page
+- [x] Customize error page
 - [ ] Define meta tags
 - [ ] Make it PWA'ish
 
