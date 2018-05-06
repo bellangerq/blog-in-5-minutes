@@ -33,7 +33,8 @@ const config = {
     { src: '@/assets/stylesheets/vars.scss' },
     { src: '@/assets/stylesheets/typo.scss' },
     { src: '@/assets/stylesheets/helpers.scss' },
-    { src: '@/assets/stylesheets/layout.scss' }
+    { src: '@/assets/stylesheets/layout.scss' },
+    { src: '@/assets/stylesheets/transition.scss' }
   ],
 
   loading: { color: '#3d4452' },

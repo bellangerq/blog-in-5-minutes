@@ -6,7 +6,7 @@ This is a simple web application I made to showcase short stories.
 - [x] Import content in store, not directly in pages
 - [x] Close menu on page load (middleware)
 - [x] Create and design `/about` page
-- [ ] Add page transitions
+- [x] Add page transitions
 - [ ] Create share buttons component
 - [ ] Customize error page
 - [ ] Define meta tags
