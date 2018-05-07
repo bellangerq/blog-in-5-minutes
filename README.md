@@ -10,10 +10,11 @@ This is a simple web application I made to showcase short stories.
 - [x] Create share buttons component
 - [x] Show error on undefined post's slug
 - [x] Customize error page
-- [ ] Write about page
+- [ ] Write `/about` page
+- [ ] Write `/404` page
 - [x] Add notification when link is copied
 - [x] Complete tweet text with post title
-- [ ] Fix error page layout
+- [x] Fix error page layout
 - [ ] Define meta tags
 - [ ] Make it PWA'ish
 

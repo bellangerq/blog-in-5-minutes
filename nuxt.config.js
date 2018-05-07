@@ -4,6 +4,7 @@ const ctfConfig = getConfigForKeys([
   'CTF_TITLE_ID',
   'CTF_NAVIGATION_ID',
   'CTF_ABOUT_ID',
+  'CTF_ERROR_ID',
   'CTF_SPACE_ID',
   'CTF_CDA_ACCESS_TOKEN',
   'CTF_CMA_ACCESS_TOKEN'
@@ -69,7 +70,8 @@ const config = {
     CTF_BLOG_POST_TYPE_ID: ctfConfig.CTF_BLOG_POST_TYPE_ID,
     CTF_TITLE_ID: ctfConfig.CTF_TITLE_ID,
     CTF_NAVIGATION_ID: ctfConfig.CTF_NAVIGATION_ID,
-    CTF_ABOUT_ID: ctfConfig.CTF_ABOUT_ID
+    CTF_ABOUT_ID: ctfConfig.CTF_ABOUT_ID,
+    CTF_ERROR_ID: ctfConfig.CTF_ERROR_ID
   }
 }
 
