@@ -15,8 +15,10 @@ This is a simple web application I made to showcase short stories.
 - [x] Add notification when link is copied
 - [x] Complete tweet text with post title
 - [x] Fix error page layout
-- [ ] Define meta tags
+- [x] Define meta tags
+- [ ] Define global meta tags on Contentful
 - [ ] Make it PWA'ish
+- [ ] Lazy load content
 
 ## Tools
 

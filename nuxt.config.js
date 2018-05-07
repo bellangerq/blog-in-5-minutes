@@ -18,7 +18,22 @@ const config = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Custom app in under 5 minutes' }
+      { name: 'theme-color', content: '#3d4452' },
+
+      // Facebook
+      { hid: 'og:site_name', property: 'og:site_name', content: 'Sentences' },
+      { hid: 'og:title', property: 'og:title', content: 'Sentences' },
+      { hid: 'og:image', property: 'og:image', content: '' },
+      { hid: 'og:url', property: 'og:url', content: 'https://sentences.surge.sh' },
+      { hid: 'og:description', property: 'og:description', content: '' },
+
+      // Twitter
+      { hid: 'twitter:title', property: 'twitter:site', content: '@bellanger_q' },
+      { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
+      { hid: 'twitter:image', property: 'twitter:image', content: '' },
+      { hid: 'twitter:widgets:theme', property: 'twitter:widgets:theme', content: 'dark' },
+      { hid: 'twitter:widgets:link-color', property: 'twitter:widgets:link-color', content: '#3d4452' },
+      { hid: 'twitter:widgets:border-color', property: 'twitter:widgets:border-color', content: '#3d4452' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
