@@ -23,6 +23,7 @@ export default {
   },
   methods: {
     copyLink () {
+      // Create fake input to select text
       const body = document.querySelector('body')
       const tempInput = document.createElement("INPUT")
       body.appendChild(tempInput)
@@ -30,6 +31,14 @@ export default {
       tempInput.select()
       document.execCommand('Copy')
       body.removeChild(tempInput)
+
+      // Change button text
+      const copyButton = document.querySelector('.share-buttons button')
+      copyButton.innerHTML = 'Copied!'
+      setTimeout(() => {
+        copyButton.innerHTML = 'Copy link'
+      }, 2000)
+
     }
   }
 }

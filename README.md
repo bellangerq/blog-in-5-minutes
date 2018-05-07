@@ -11,8 +11,8 @@ This is a simple web application I made to showcase short stories.
 - [x] Show error on undefined post's slug
 - [x] Customize error page
 - [ ] Write about page
-- [ ] Add notification when link is copied
-- [ ] Complete tweet text with post title
+- [x] Add notification when link is copied
+- [x] Complete tweet text with post title
 - [ ] Fix error page layout
 - [ ] Define meta tags
 - [ ] Make it PWA'ish
