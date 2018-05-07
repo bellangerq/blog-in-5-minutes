@@ -12,7 +12,7 @@
       <time v-if="post.fields.publishDate">{{ ( new Date(post.fields.publishDate)).toDateString() }}</time>
       <hr>
       <vue-markdown>{{ post.fields.body }}</vue-markdown>
-      <hr>
+      <hr v-if="post.fields.publishDate">
       <ShareButtons :title="post.fields.title" :url="post.fields.slug" v-if="post.fields.publishDate"></ShareButtons>
     </div>
   </article>
