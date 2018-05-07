@@ -24,6 +24,8 @@ const config = {
       { hid: 'og:site_name', property: 'og:site_name', content: 'Sentences' },
       { hid: 'og:title', property: 'og:title', content: 'Sentences' },
       { hid: 'og:image', property: 'og:image', content: '' },
+      { hid: 'og:image:width', property: 'og:image:width', content: '1200' },
+      { hid: 'og:image:height', property: 'og:image:height', content: '630' },
       { hid: 'og:url', property: 'og:url', content: 'https://sentences.surge.sh' },
       { hid: 'og:description', property: 'og:description', content: '' },
 
