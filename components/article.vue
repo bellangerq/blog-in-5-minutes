@@ -13,7 +13,7 @@
       <hr>
       <vue-markdown>{{ post.fields.body }}</vue-markdown>
       <hr>
-      <ShareButtons :url="post.fields.slug" v-if="post.fields.publishDate"></ShareButtons>
+      <ShareButtons :title="post.fields.title" :url="post.fields.slug" v-if="post.fields.publishDate"></ShareButtons>
     </div>
   </article>
 </template>

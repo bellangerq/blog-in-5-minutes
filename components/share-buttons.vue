@@ -8,6 +8,7 @@
 <script>
 export default {
   props: [
+    'title',
     'url'
   ],
   data () {
@@ -17,7 +18,7 @@ export default {
   },
   computed: {
     tweetUrl () {
-      return `https://twitter.com/intent/tweet?url=${this.currentUrl}`
+      return `https://twitter.com/intent/tweet?text=📖%20${this.title}:&url=${this.currentUrl}`
     }
   },
   methods: {

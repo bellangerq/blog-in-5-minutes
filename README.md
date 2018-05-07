@@ -10,12 +10,16 @@ This is a simple web application I made to showcase short stories.
 - [x] Create share buttons component
 - [x] Show error on undefined post's slug
 - [x] Customize error page
+- [ ] Write about page
+- [ ] Add notification when link is copied
+- [ ] Complete tweet text with post title
+- [ ] Fix error page layout
 - [ ] Define meta tags
 - [ ] Make it PWA'ish
 
 ## Tools
 
-It's built with [Nuxt.js](https://nuxtjs.org) and the content is pulled from [Contentful](https://contentful.com). It is deployed online as a static website thanks to [Surge.sh](https://surge.sh).
+It's built with [Nuxt.js](https://nuxtjs.org) and the content is pulled from [Contentful](https://contentful.com). It is deployed online as a static website thanks to [Surge.sh](https://surge.sh). Icons are from [Feather Icons](https://feathericons.com/).
 
 The idea of this is to create a website with a fully customizable content without using a traditional CMS. And also to force me to write sometimes...
 
