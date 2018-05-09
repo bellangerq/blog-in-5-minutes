@@ -10,14 +10,16 @@ This is a simple web application I made to showcase short stories.
 - [x] Create share buttons component
 - [x] Show error on undefined post's slug
 - [x] Customize error page
-- [ ] Write `/about` page
-- [ ] Write `/404` page
+- [x] Write `/about` page
+- [x] Write `/404` page
 - [x] Add notification when link is copied
 - [x] Complete tweet text with post title
 - [x] Fix error page layout
 - [x] Define meta tags
 - [x] Define global meta tags on Contentful
+- [ ] Rebrand app
 - [ ] Make it PWA'ish
+- [ ] Setup content preview
 - [ ] Lazy load content
 
 ## Tools

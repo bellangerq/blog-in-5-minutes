@@ -1,16 +1,18 @@
 <template lang="html">
-  <section>
-    <article>
-      <img class="cover" src="~/static/error-banner.png" alt="Error">
-      <div class="content">
-        <h1>{{ error.fields.title }}</h1>
-        <hr>
-        <p>{{ error.fields.description }}</p>
-        <br>
-        <nuxt-link to="/">{{ error.fields.backLink }}</nuxt-link>
-      </div>
-    </article>
-  </section>
+  <div>
+    <section>
+      <article>
+        <img class="cover" src="~/static/error-banner.png" alt="Error">
+        <div class="content">
+          <h1>{{ error.fields.title }}</h1>
+          <hr>
+          <p>{{ error.fields.description }}</p>
+          <br>
+          <nuxt-link to="/">{{ error.fields.backLink }}</nuxt-link>
+        </div>
+      </article>
+    </section>
+  </div>
 </template>
 
 <script>

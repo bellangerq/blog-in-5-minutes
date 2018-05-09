@@ -55,16 +55,23 @@ export default {
 .cards {
   display: flex;
   flex-wrap: wrap;
+  padding: 0 20px;
 
   .card {
     display: block;
-    margin: 0 20px 20px;
+    margin: 0 0 20px 0;
     min-height: 350px;
 
     @media(min-width: 500px) {
       display: flex;
-      margin: 0 20px 40px 20px;
-      width: calc((100% / 2) - 40px);
+      width: calc((100% / 2) - 10px);
+
+      &:nth-child(odd) {
+        margin: 0 10px 20px 0;
+      }
+      &:nth-child(even) {
+        margin: 0 0 20px 10px;
+      }
     }
   }
 }
