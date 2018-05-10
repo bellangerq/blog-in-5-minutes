@@ -1,9 +1,8 @@
 <template>
   <nuxt-link class="article-link" :to="{ name: 'slug', params: { slug: post.fields.slug }}">
     <img
-      :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=350&h=196'"
-      :srcset="`${post.fields.heroImage.fields.file.url}?w=350&h=196&fit=fill 350w, ${post.fields.heroImage.fields.file.url}?w=1000&h=562&fit=fill 1000w, ${post.fields.heroImage.fields.file.url}?w=2000&h=1125&fit=fill 2000w`"
-      sizes="(min-width: 1024px) 400px, 100vw"
+      :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=400&h=200'"
+      :srcset="`${post.fields.heroImage.fields.file.url}?w=400&h=200&fit=fill 400w, ${post.fields.heroImage.fields.file.url}?w=1000&h=500&fit=fill 1000w, ${post.fields.heroImage.fields.file.url}?w=2000&h=1000&fit=fill 2000w`"
       :alt="post.fields.title"
     >
     <div class="content">

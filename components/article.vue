@@ -1,9 +1,8 @@
 <template lang="html">
   <article>
     <img
-      :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=350&h=196'"
-      :srcset="`${post.fields.heroImage.fields.file.url}?w=350&h=87&fit=fill 350w, ${post.fields.heroImage.fields.file.url}?w=1000&h=250&fit=fill 1000w, ${post.fields.heroImage.fields.file.url}?w=2000&h=500&fit=fill 2000w`"
-      size="100vw"
+      :src="post.fields.heroImage.fields.file.url + '?fit=scale&w=500&h=250'"
+      :srcset="`${post.fields.heroImage.fields.file.url}?w=500&h=250&fit=fill 500w, ${post.fields.heroImage.fields.file.url}?w=1000&h=500&fit=fill 1000w, ${post.fields.heroImage.fields.file.url}?w=2000&h=1000&fit=fill 2000w`"
       :alt="post.fields.heroImage.fields.description"
       class="cover"
     >

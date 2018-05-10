@@ -27,7 +27,6 @@ export default {
         'content_type': env.CTF_META_ID,
       })
     ]).then(([posts, meta]) => {
-      console.log(meta.items[0])
       return {
         posts: posts.items,
         meta: meta.items[0]

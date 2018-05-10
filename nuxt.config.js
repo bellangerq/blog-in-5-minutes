@@ -19,7 +19,7 @@ const config = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'theme-color', content: '#3d4452' },
+      { name: 'theme-color', content: '#e8c679' },
 
       // Facebook
       { hid: 'og:site_name', property: 'og:site_name', content: 'Sentences' },
@@ -35,8 +35,8 @@ const config = {
       { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
       { hid: 'twitter:image', property: 'twitter:image', content: '' },
       { hid: 'twitter:widgets:theme', property: 'twitter:widgets:theme', content: 'dark' },
-      { hid: 'twitter:widgets:link-color', property: 'twitter:widgets:link-color', content: '#3d4452' },
-      { hid: 'twitter:widgets:border-color', property: 'twitter:widgets:border-color', content: '#3d4452' }
+      { hid: 'twitter:widgets:link-color', property: 'twitter:widgets:link-color', content: '#e8c679' },
+      { hid: 'twitter:widgets:border-color', property: 'twitter:widgets:border-color', content: '#e8c679' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
@@ -52,7 +52,7 @@ const config = {
     { src: '@/assets/stylesheets/transition.scss' }
   ],
 
-  loading: { color: '#3d4452' },
+  loading: { color: '#e8c679' },
 
   build: {
     postcss: [
