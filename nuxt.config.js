@@ -15,6 +15,9 @@ const cdaClient = createClient(ctfConfig)
 
 const config = {
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: 'Sentences 💬',
     meta: [
       { charset: 'utf-8' },
@@ -65,6 +68,29 @@ const config = {
   plugins: [
     '~/plugins/contentful'
   ],
+
+  modules: [
+    '@nuxtjs/pwa'
+  ],
+
+  manifest: {
+    'short_name': 'Sentences',
+    'name': 'Sentences',
+    'start_url': '/?homescreen=true',
+    'display': 'standalone',
+    'orientation': 'portrait',
+    'theme_color': '#e8c679',
+    'background_color': '#fff',
+    'icons': [{
+      'src': '@/static/icon.png',
+      'sizes': '512x512',
+      'type': 'image/png'
+    }]
+  },
+
+  // workbox: {
+  //   importScripts: ['sw.js']
+  // },
 
   router: {
     middleware: ['routeGuard']

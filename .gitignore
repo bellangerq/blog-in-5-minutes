@@ -138,3 +138,6 @@ dist
 
 # data
 data
+
+# Service worker
+sw.*
