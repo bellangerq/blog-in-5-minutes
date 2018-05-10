@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nuxt-link to="/" :title="header.title.items[0].fields.title">{{ header.title.items[0].fields.text }} <span>{{ header.title.items[0].fields.emoji }}</span></nuxt-link>
+    <nuxt-link to="/" :title="header.title.items[0].fields.title">{{ header.title.items[0].fields.text }}</nuxt-link>
     <div class="navigation-container">
       <button type="button" id="toggleNav" @click="toggleNav">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
@@ -57,13 +57,14 @@ header {
     font-size: 20px;
     text-decoration: none;
 
-    span {
-      opacity: 0;
-      transition: opacity .3s ease;
-    }
-
-    &:hover span, &:focus span {
-      opacity: 1;
+    &::after {
+      background-color: $color-main;
+      border-radius: 50%;
+      content: '';
+      display: inline-block;
+      height: 5px;
+      margin-left: 5px;
+      width: 5px;
     }
   }
 
