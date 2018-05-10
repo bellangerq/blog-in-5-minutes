@@ -1,9 +1,25 @@
-$color-black: #000;
+// Colors
+$color-black: #333;
 $color-white: #fff;
 $color-white-darker: darken($color-white, 5%);
-$color-main: #3d4452;
+$color-main: #e8c679;
 $color-main-darker: darken($color-main, 5%);
 $color-gray: darken($color-white, 30%);
 $color-twitter: #1DA1F2;
 $color-twitter-darker: darken($color-twitter, 10%);
+
+// Fonts
+$font-sans-serif: -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji',
+  'Segoe UI Symbol';
+$font-serif: 'PT Serif', 'Georgia', serif;
+
+// Other
 $radius: 3px;

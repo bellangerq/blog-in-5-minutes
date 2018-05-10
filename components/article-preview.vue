@@ -42,12 +42,12 @@ export default {
 
     h2 {
       font-size: 1.25em;
-      font-weight: normal;
+      font-weight: 600;
       margin: 0 0 10px 0;
     }
 
     p {
-      font-size: 0.875em;
+      font-family: $font-serif;
     }
   }
 

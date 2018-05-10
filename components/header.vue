@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../assets/stylesheets/vars.scss';
 
 header {
@@ -52,7 +52,7 @@ header {
   padding: 20px;
 
   a {
-    color: $color-main;
+    color: $color-black;
     font-size: 20px;
     text-decoration: none;
 
@@ -75,12 +75,8 @@ header {
     button {
       background: none;
       border: none;
-      color: $color-main;
+      color: $color-black;
       padding: 0;
-
-      &:hover {
-        cursor: pointer;
-      }
 
       svg {
         transition: all 0.3s;

@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../assets/stylesheets/vars.scss';
 
 .cover {
@@ -44,20 +44,27 @@ export default {
   padding: 20px;
 
   time {
-    color: $color-main-darker;
+    color: $color-black;
     display: block;
+    font-family: $font-serif;
     font-size: 0.8em;
     margin: 0 0 20px 0;
     text-align: center;
   }
 
+  p, ul {
+    font-family: $font-serif;
+    font-size: 1.25em;
+    line-height: 1.8;
+  }
+
   a {
-    text-decoration: underline;
+    color: $color-main;
 
     &:hover,
     &:focus {
       color: $color-main-darker;
-      text-decoration: none;
+      text-decoration: underline;
     }
   }
 }

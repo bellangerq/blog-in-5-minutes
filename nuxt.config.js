@@ -39,7 +39,8 @@ const config = {
       { hid: 'twitter:widgets:border-color', property: 'twitter:widgets:border-color', content: '#3d4452' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=PT+Serif' }
     ]
   },
 

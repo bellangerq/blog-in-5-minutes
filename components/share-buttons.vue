@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../assets/stylesheets/vars.scss';
 
 .share-buttons {
@@ -70,6 +70,7 @@ export default {
       &:hover,
       &:focus {
         background: $color-twitter-darker;
+        text-decoration: none;
       }
     }
     &.share-copy {
