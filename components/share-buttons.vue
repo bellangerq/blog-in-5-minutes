@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="share-buttons">
-    <a :href="tweetUrl" target="_blank" class="share-twitter">Tweet</a>
+    <a :href="tweetUrl" target="_blank" rel="noopener" class="share-twitter">Tweet</a>
     <button @click="copyLink" class="share-copy">Copy link</button>
   </div>
 </template>
@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../assets/stylesheets/vars.scss';
 
 .share-buttons {

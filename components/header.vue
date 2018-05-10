@@ -11,6 +11,7 @@
           :to="link.fields.url || '/'"
           :title="link.fields.title"
           :target="link.fields.target ? '_blank' : ''"
+          :rel="link.fields.target ? 'noopener' : ''"
           :key="link.fields.url"
         >
           {{ link.fields.text }}
@@ -41,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../assets/stylesheets/vars.scss';
 
 header {
