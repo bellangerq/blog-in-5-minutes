@@ -73,9 +73,19 @@ const config = {
     '@nuxtjs/pwa'
   ],
 
+  // workbox: {
+  //   dev: true,
+  //   importScripts: ['sw.js']
+  //   runtimeCaching: [{
+  //     urlPattern: 'localhost:3000/.*',
+  //     handler: 'cacheFirst',
+  //     method: 'GET'
+  //   }]
+  // },
+
   manifest: {
-    'short_name': 'Sentences',
     'name': 'Sentences',
+    'short_name': 'Sentences',
     'start_url': '/?homescreen=true',
     'display': 'standalone',
     'orientation': 'portrait',
@@ -87,10 +97,6 @@ const config = {
       'type': 'image/png'
     }]
   },
-
-  // workbox: {
-  //   importScripts: ['sw.js']
-  // },
 
   router: {
     middleware: ['routeGuard']
